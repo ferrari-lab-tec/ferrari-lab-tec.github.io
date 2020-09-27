@@ -11,9 +11,9 @@
     text-decoration: none;
     outline: none;
     cursor: pointer;
+    border-radius: var(--border-radius);
     background: transparent;
     color: var(--black);
-    border-radius: 6px;
     &:hover {
         background-color: var(--black-10);
     }
