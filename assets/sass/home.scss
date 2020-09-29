@@ -6,7 +6,7 @@
         min-width: 320px;
         min-height: 675px;
         height: 100vh;
-        background-image: url('../images/ferrari-vermelha-1200.png');
+        background-image: url('../images/ferrari-vermelha-1200.webp');
         background-size: cover;
         background-position-x: 80%;
         background-position-y: center;
@@ -27,7 +27,7 @@
             color: var(--white);
             &:hover {
                 background-color: var(--white);
-                color: var(--white);
+                color: var(--black);
             }
         }
         ul {
@@ -52,7 +52,7 @@
                 background-color: var(--black-75);
                 color: var(--white);
                 padding: var(--space);
-                h2, p  {
+                h2, p {
                     margin: 0;
                 }
                 h2 {
@@ -68,7 +68,7 @@
     }
 }
 
-@media (min-width: 576px) {
+@media(min-width: 576px) {
     #home {
         .gallery {
             flex-direction: row;
@@ -84,7 +84,7 @@
         }
         > header {
             max-height: initial;
-            background-image: url('../images/ferrari-vermelha-1200.webp');
+            background-image: url('../images/ferrari-vermelha.webp');
         }
     }
 }
@@ -92,7 +92,6 @@
 @media (min-width: 1920px) {
     #home {
         > header {
-            max-height: initial;
             background-image: url('../images/ferrari-vermelha@2x.webp');
         }
     }

@@ -5,7 +5,6 @@
     background-color: var(--gray-5);
     position: relative;
     z-index: 3;
-
     .italy {
         width: 100%;
         position: absolute;
@@ -17,16 +16,14 @@
         height: 18px;
         margin: 0;
     }
-
     .logo {
         position: absolute;
-        transition: all 1s  ease-in-out;
+        transition: all 1s ease-in-out;
         top: 15px;
         width: 72px;
         right: calc(50vw - 36px);
         z-index: 5;
     }
-
     .menu {
         transition: right .5s ease-in-out;
         width: 300px;
@@ -34,21 +31,18 @@
         padding-bottom: 50px;
         background-color: var(--gray-7);
         position: fixed;
-        right: -300;
+        right: -300px;
         top: 0;
         z-index: 4;
         flex-direction: column;
         justify-content: space-between;
-
-        hr{
+        hr {
             width: 100%;
             border-bottom: none;
             border-color: var(--black-10);
             margin: 0;
         }
-
         &.logged {
-
             nav {
                 ul {
                     li {
@@ -61,7 +55,6 @@
                     }
                 }
             }
-
             .footer {
                 > div {
                     display: flex;
@@ -73,46 +66,38 @@
         }
         nav {
             flex-direction: column;
-
             ul {
                 margin: 0;
-                margin-top: 249px;
                 padding: 0;
+                margin-top: 249px;
                 width: 100%;
                 flex-direction: column;
-
                 li {
                     padding: 14px 0;
                     list-style: none;
                     justify-content: center;
-
                     a {
                         text-decoration: none;
                         color: var(--gray-0);
                     }
-
                     &.hide-guest, &.divider {
                         display: none;
                     }
-
                     hr {
                         margin: 15px 0;
                     }
                 }
             }
         }
-
         .footer {
             flex-direction: column;
             align-items: center;
             width: 100%;
-
             > div {
                 display: none;
                 padding: 15px;
                 width: 100%;
                 align-items: center;
-
                 picture {
                     margin-right: 10px;
                     img {
@@ -121,17 +106,14 @@
                         border-radius: 50%;
                     }
                 }
-
                 > div {
                     flex-direction: column;
                     flex: 1;
                 }
-
                 a {
                     color: var(--dark-0);
                     text-decoration: none;
                     font-size: 16px;
-
                     small {
                         color: var(--gray-2);
                         font-size: 12px;
@@ -139,27 +121,24 @@
                 }
             }
         }
-
         .btn-register {
             margin: 20px;
             width: calc(300px - 40px);
             @include button-green;
         }
     }
-
     button {
         background: none;
         border: none;
         outline: none;
         padding: 13px;
     }
-
     #btn-open, #btn-close {
         position: absolute;
         right: 0;
     }
-}
 
+}
 .open-menu {
     overflow: hidden;
     #header {
@@ -186,7 +165,7 @@
     .open-menu {
         overflow: initial;
         #header {
-            .overley {
+            .overlay {
                 display: none;
             }
             .logo {

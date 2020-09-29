@@ -1,23 +1,23 @@
 @font-face {
-  font-family: "Opens Sans";
+  font-family: "Open Sans";
+  src: local("Open Sans Light"), url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Open Sans";
   src: local("Open Sans Regular"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
-  font-family: "Opens Sans";
-  src: local("Open Sans Ligth"), url("../fonts/OpenSans-Light.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Opens Sans";
+  font-family: "Open Sans";
   src: local("Open Sans SemiBold"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
-  font-family: "Opens Sans";
+  font-family: "Open Sans";
   src: local("Open Sans Bold"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
@@ -46,13 +46,13 @@
   --dark-1: #000000BF;
   --gray: #79756C;
   --gray-0: #707070;
-  --gray-1: #7e7e7e;
-  --gray-2: #9a9a99;
-  --gray-3: #ccc;
+  --gray-1: #7E7E7E;
+  --gray-2: #9A9A99;
+  --gray-3: #CCC;
   --gray-4: #00000029;
-  --gray-5: #e5e3dfBF;
+  --gray-5: #E5E3DFBF;
   --gray-6: #F8F8F8;
-  --gray-7: #e5e3DF;
+  --gray-7: #E5E3DF;
   --gray-8: #DDD;
   --gray-9: #999;
   --gray-10: #EEE;
@@ -61,12 +61,12 @@
   --red: #E32119;
   --red-hover: #E4423B;
   --red-active: #C91D16;
-  --green: #00994d;
-  --green-hover: #00be60;
-  --green-active: #00773c;
-  --blue: #00a0e6;
-  --blue-hover: #1cabe9;
-  --blue-active: #199bd4;
+  --green: #00994D;
+  --green-hover: #00BE60;
+  --green-active: #00773C;
+  --blue: #00A0E6;
+  --blue-hover: #1CABE9;
+  --blue-active: #199BD4;
   --success: #D4EDDA;
   --success-border: #C3E6CB;
   --success-color: #155724;
@@ -75,10 +75,6 @@
   --danger-color: #721C24;
   --space: 20px;
   --border-radius: 5px;
-  --mobile: 567px;
-  --tablet: ;
-  --desktop: ;
-  --retina: 1920px;
 }
 
 * {
@@ -113,7 +109,7 @@ hr.divider {
 
 @media (min-width: 1200px) {
   body > main {
-    min-height: calc(100vh - 333px);
+    min-height: calc(100vh - 341px);
   }
 }
 .toast {
@@ -164,7 +160,7 @@ form .field {
   position: relative;
   flex-direction: column;
   width: 100%;
-  margin-top: var(--space);
+  margin-bottom: var(--space);
 }
 form .field label {
   color: var(--gray-3);
@@ -191,13 +187,13 @@ form .field input, form .field textarea, form .field select {
   width: 100%;
   background-color: transparent;
 }
-form .field:focus {
+form .field input:focus, form .field textarea:focus, form .field select:focus {
   border-color: var(--green);
 }
-form .field:focus + label {
+form .field input:focus + label, form .field textarea:focus + label, form .field select:focus + label {
   color: var(--green);
 }
-form .field[readonly] {
+form .field input[readonly], form .field textarea[readonly], form .field select[readonly] {
   border: none;
   color: var(--black);
   font-weight: bold;
@@ -205,7 +201,7 @@ form .field[readonly] {
   text-transform: uppercase;
   padding-bottom: 0;
 }
-form .field[readonly] + label {
+form .field input[readonly] + label, form .field textarea[readonly] + label, form .field select[readonly] + label {
   color: var(--gray-0);
   text-transform: uppercase;
 }
@@ -277,6 +273,7 @@ header.page-title hr {
   width: 68px;
   border: none;
   border-top: 4px solid var(--red);
+  margin: 10px 0;
 }
 
 .page {
@@ -294,6 +291,7 @@ header.page-title hr {
   background-color: var(--black);
   color: var(--white);
   justify-content: center;
+  align-items: center;
   margin-top: 18px;
 }
 .page > header h1 {
@@ -302,8 +300,8 @@ header.page-title hr {
   text-transform: uppercase;
 }
 .page > main {
-  flex-direction: column;
   margin-bottom: 80px;
+  flex-direction: column;
 }
 .page > main .toast {
   position: fixed;
@@ -524,37 +522,37 @@ header.page-title hr {
 .calendar .month nav button {
   min-width: 50px;
 }
-.calendar .month nav button button + button {
+.calendar .month nav button + button {
   margin-left: 10px;
 }
-.calendar .month nav .btn-today {
+.calendar .month .btn-today {
   display: none;
 }
-.calendar .month ul {
+.calendar ul {
   margin: 0;
   padding: 0;
 }
-.calendar .month .weekdays {
+.calendar .weekdays {
   font-weight: bold;
   text-transform: uppercase;
   color: var(--gray-0);
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.calendar .month .weekdays li {
+.calendar .weekdays li {
   justify-content: center;
-  padding: 8px;
+  padding: 8px 0;
   font-size: 12px;
   font-weight: bold;
 }
-.calendar .month .days {
+.calendar .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(5, 12vw);
   grid-gap: 10px;
   color: var(--dark-0);
 }
-.calendar .month .days li {
+.calendar .days li {
   font-size: 16px;
   justify-content: center;
   align-items: center;
@@ -563,28 +561,28 @@ header.page-title hr {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.calendar .month .days li:hover {
+.calendar .days li:hover {
   background-color: var(--gray-7);
 }
-.calendar .month .days li.active {
+.calendar .days li.active {
   background-color: var(--blue);
   color: var(--white);
 }
-.calendar .month .days li.active:hover {
+.calendar .days li.active:hover {
   background-color: var(--blue-hover);
 }
-.calendar .month .days li.active:active {
+.calendar .days li.active:active {
   background-color: var(--blue-active);
 }
-.calendar .month .days li.selected {
-  background-color: var(--blue);
+.calendar .days li.selected {
+  background-color: var(--green);
   color: var(--white);
 }
-.calendar .month .days li.selected:hover {
-  background-color: var(--blue-hover);
+.calendar .days li.selected:hover {
+  background-color: var(--green-hover);
 }
-.calendar .month .days li.selected:active {
-  background-color: var(--blue-active);
+.calendar .days li.selected:active {
+  background-color: var(--green-active);
 }
 
 @media (min-width: 992px) {
@@ -600,7 +598,7 @@ header.page-title hr {
   .calendar .month .btn-today {
     display: flex;
   }
-  .calendar .weekdays li {
+  .calendar .weedays li {
     font-size: 21px;
     font-weight: bold;
   }
@@ -645,7 +643,7 @@ header.page-title hr {
   padding-bottom: 50px;
   background-color: var(--gray-7);
   position: fixed;
-  right: -300;
+  right: -300px;
   top: 0;
   z-index: 4;
   flex-direction: column;
@@ -674,8 +672,8 @@ header.page-title hr {
 }
 #header .menu nav ul {
   margin: 0;
-  margin-top: 249px;
   padding: 0;
+  margin-top: 249px;
   width: 100%;
   flex-direction: column;
 }
@@ -794,7 +792,7 @@ header.page-title hr {
   .open-menu {
     overflow: initial;
   }
-  .open-menu #header .overley {
+  .open-menu #header .overlay {
     display: none;
   }
   .open-menu #header .logo {
@@ -926,7 +924,7 @@ header.page-title hr {
   margin-right: 1em;
 }
 #footer .columns ul li.social img {
-  right: 24px;
+  height: 24px;
 }
 #footer .columns .logo {
   margin: var(--space) 0;
@@ -940,6 +938,7 @@ header.page-title hr {
   #footer {
     padding-left: 100px;
     padding-right: 100px;
+    padding-bottom: 0;
   }
   #footer .columns {
     flex-direction: row;
@@ -979,7 +978,7 @@ header.page-title hr {
   min-width: 320px;
   min-height: 675px;
   height: 100vh;
-  background-image: url("../images/ferrari-vermelha-1200.png");
+  background-image: url("../images/ferrari-vermelha-1200.webp");
   background-size: cover;
   background-position-x: 80%;
   background-position-y: center;
@@ -1022,7 +1021,7 @@ header.page-title hr {
 }
 #home > header a:hover {
   background-color: var(--white);
-  color: var(--white);
+  color: var(--black);
 }
 #home > header ul {
   display: none;
@@ -1074,12 +1073,11 @@ header.page-title hr {
   }
   #home > header {
     max-height: initial;
-    background-image: url("../images/ferrari-vermelha-1200.webp");
+    background-image: url("../images/ferrari-vermelha.webp");
   }
 }
 @media (min-width: 1920px) {
   #home > header {
-    max-height: initial;
     background-image: url("../images/ferrari-vermelha@2x.webp");
   }
 }
@@ -1144,7 +1142,7 @@ header.page-title hr {
   flex-direction: column;
 }
 #service > div .icons figure {
-  margin-top: var(--pace);
+  margin-top: var(--space);
   flex-direction: column;
   align-items: center;
 }

@@ -9,7 +9,7 @@ form {
         position: relative;
         flex-direction: column;
         width: 100%;
-        margin-top: var(--space);
+        margin-bottom: var(--space);
         label {
             color: var(--gray-3);
             font-size: 14px;
@@ -34,23 +34,23 @@ form {
             transition: border-color .3s ease-in-out;
             width: 100%;
             background-color: transparent;
-        }
-        &:focus {
-            border-color: var(--green);
-            + label {
-                color: var(--green);
+            &:focus {
+                border-color: var(--green);
+                + label {
+                    color: var(--green);
+                }
             }
-        }
-        &[readonly] {
-            border: none;
-            color: var(--black);
-            font-weight: bold;
-            font-size: 22px;
-            text-transform: uppercase;
-            padding-bottom: 0;
-            + label {
-                color: var(--gray-0);
+            &[readonly] {
+                border: none;
+                color: var(--black);
+                font-weight:  bold;
+                font-size: 22px;
                 text-transform: uppercase;
+                padding-bottom: 0;
+                + label {
+                    color: var(--gray-0);
+                    text-transform: uppercase;
+                }
             }
         }
     }

@@ -11,9 +11,10 @@ header {
             font-weight: 600;
         }
         hr {
-            width: 68px;
+            width:68px;
             border: none;
             border-top: 4px solid var(--red);
+            margin: 10px 0;
         }
     }
 }
@@ -32,6 +33,7 @@ header {
         background-color: var(--black);
         color: var(--white);
         justify-content: center;
+        align-items: center;
         margin-top: 18px;
         h1 {
             font-size: 23px;
@@ -40,8 +42,8 @@ header {
         }
     }
     > main {
-        flex-direction: column;
         margin-bottom: 80px;
+        flex-direction: column;
         .toast {
             position: fixed;
             bottom: 0;
@@ -77,7 +79,7 @@ header {
         footer.fixed {
             button[type=submit], a.black {
                 @include button-blue;
-            }
+            } 
         }
     }
     &.green {
@@ -87,7 +89,7 @@ header {
         footer.fixed {
             button[type=submit], a.black {
                 @include button-green;
-            }
+            } 
         }
     }
 }
@@ -112,7 +114,6 @@ header {
                 &:first-child {
                     order: 2;
                 }
-
             }
         }
     }
